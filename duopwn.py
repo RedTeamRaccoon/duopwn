@@ -101,11 +101,7 @@ def build_req(url, skey, ikey, action, user):
             path = "/auth/v2/preauth"
             params["username"] = user
 
-        # 'auth' function is incomplete.
-        # Needs to take Deviced ID and capabilities from 'preauth'
-        # required fields in the post will be the deviceid and auth type (push, otp, etc)
-        # push timeouts, incorrect otp, incorrect response to push, all can cause lockout if repeated.
-
+        # 'auth' function is potentially completed.  Need to test this in a real environment.
         case "auth":
             method = "POST"
             path = "/auth/v2/auth"
